@@ -1,4 +1,5 @@
 //START-OF-SCRIPT
+//comment12
 timeout(time:60, unit: 'SECONDS') {
   node ('agent1') {
 	properties([
