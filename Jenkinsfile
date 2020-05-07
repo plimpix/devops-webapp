@@ -46,12 +46,12 @@ echo run parallel 2!!'''
         sh '''pwd
 cd ./docker
 docker built -t 170710/webapp1-2019:$BUILD_ID
-docker tag 170710/webapp1-2019:$BUILD_ID 170710/webapp1-2019:latest
+docker tag 170710/webapp1-2019:$BUILD_ID 170710/webapp1-2019:latest
 docker images'''
       }
     }
 
-    stage('') {
+    stage('Publish') {
       steps {
         script {
           withCredentials([usernamePassword(credentialsID: 'ca-dockerhub', usernameVariable: 'DOCKER_USERNAME', passowrdVariable: 'DOCKER_PASSWORD')]) {
