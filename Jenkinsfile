@@ -16,7 +16,7 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            sh '''RELEASE=webapp.war
+            sh '''RELEASE=devops-webapp_master-1.0.war
 pwd
 ./gradlew build -PwarName=$RELEASE --info
 ls -l build/libs/
