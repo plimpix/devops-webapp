@@ -54,7 +54,7 @@ docker images'''
     stage('Publish') {
       steps {
         script {
-          withCredentials([usernamePassword(credentialsID: 'ca-dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+          withCredentials([usernamePassword(credentialsId: 'ca-dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
             sh '''
 docker login -u="$DOCKER_USERNAME" -p="DOCKER_PASSWORD"
 docker push 170710/webapp1-2019:$BUILD_ID
